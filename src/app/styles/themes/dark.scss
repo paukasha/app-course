@@ -1,8 +1,11 @@
 .app.dark {
   --bg-color: #1c1c1c;
-  --primary-color: #585757;
-  --secondary-color: #e8e8e8;
+  --inverted-bg-color: #f7f7f7;
 
+  --primary-color: #585757;
+  --inverted-primary-color: #585757;
+
+  --secondary-color: #e8e8e8;
 
   //темы из миса
   --body-background: linear-gradient(
