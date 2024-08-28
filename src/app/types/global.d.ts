@@ -17,3 +17,5 @@ declare module "*.png"
 declare module "*.gif"
 declare module "*.woff"
 declare module "*.woff2"
+
+declare const __IS_DEV__: boolean
