@@ -1,12 +1,13 @@
 import React from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
+import { BugButton } from 'app/provider/ErrorBoundary';
 
 const MainPage = () => {
-    const {t} = useTranslation('mainpage')
+    const { t } = useTranslation('mainpage');
     return (
         <div>
+            <BugButton />
             {t('Главная')}
-            {t('какой то русский текст')}
         </div>
     );
 };

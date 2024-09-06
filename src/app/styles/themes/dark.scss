@@ -1,53 +1,53 @@
 .app.dark {
-  --bg-color: #1c1c1c;
-  --inverted-bg-color: #f7f7f7;
+    --bg-color: #1c1c1c;
+    --inverted-bg-color: #f7f7f7;
+    --primary-color: #585757;
+    --inverted-primary-color: #585757;
+    --secondary-color: #e8e8e8;
 
-  --primary-color: #585757;
-  --inverted-primary-color: #585757;
+    // темы из миса
+    --body-background:
+        linear-gradient(
+            90deg,
+            #f7f7f7 0%,
+            rgb(247 247 247 / 0%) 100%
+        );
+    --graph-background: #f3d7b8f0;
+    --color-btn-hover: #cbcbcb;
+    --color-modal-dark: rgb(0 0 0 / 80%);
+    --color-mc-top: #0085ff3b;
 
-  --secondary-color: #e8e8e8;
+    /*  ui */
 
-  //темы из миса
-  --body-background: linear-gradient(
-                  90deg,
-                  #f7f7f7 0%,
-                  rgba(247, 247, 247, 0) 100%
-  );
-  --graph-background: #f3d7b8f0;
-  --color-btn-hover: #cbcbcb;
-  --color-modal-dark: rgba(0, 0, 0, 0.8);
-  --color-mc-top: #0085ff3b;
-  /*  ui */
-  /* grey */
-  --color-cod-gray: #1c1c1c;
-  --grey-content-2: #585757;
-  --grey-content-3: #969696;
-  --color-mercury: #e8e8e8;
-  --grey-background-secondary: #f7f7f7;
-  --color-white: #fff;
-  --color-silver-chalice: #a9a9a9;
+    /* grey */
+    --color-cod-gray: #1c1c1c;
+    --grey-content-2: #585757;
+    --grey-content-3: #969696;
+    --color-mercury: #e8e8e8;
+    --grey-background-secondary: #f7f7f7;
+    --color-white: #fff;
+    --color-silver-chalice: #a9a9a9;
 
-  /* blue */
-  --blue-base: #0085ff;
-  --color-dodger-blue: #339dff;
-  --color-denim: #1272cc;
-  --color-onahau: #cce7ff;
-  --color-solitude: #e5f3ff;
+    /* blue */
+    --blue-base: #0085ff;
+    --color-dodger-blue: #339dff;
+    --color-denim: #1272cc;
+    --color-onahau: #cce7ff;
+    --color-solitude: #e5f3ff;
 
-  /* red */
-  --red-base: #e92c2c;
-  --color-fair-pink: #ffecec;
-  --color-cinderella: #fbd5d5;
+    /* red */
+    --red-base: #e92c2c;
+    --color-fair-pink: #ffecec;
+    --color-cinderella: #fbd5d5;
 
-  /* green */
-  --green-base: #00ba34;
-  --color-tara: #e5f8eb;
-  --color-emirald: #33c85d;
-  --fun-green: #00952a;
-  --color-granny-apple: #ccf1d6;
+    /* green */
+    --green-base: #00ba34;
+    --color-tara: #e5f8eb;
+    --color-emirald: #33c85d;
+    --fun-green: #00952a;
+    --color-granny-apple: #ccf1d6;
 
-  /*  orange */
-  --color-tangerine: #f98600;
-  --color-serenade: #fff5e9;
+    /*  orange */
+    --color-tangerine: #f98600;
+    --color-serenade: #fff5e9;
 }
-
