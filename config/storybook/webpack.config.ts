@@ -1,0 +1,40 @@
+import webpack from 'webpack';
+import path from 'path';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import { BuildPaths } from '../build/types/config';
+import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
+import { buildSvgLoaders } from '../build/loaders/buildSvgLoaders';
+
+export default ({ config }: {config: webpack.Configuration}) => {
+    const paths: BuildPaths = {
+        build: '',
+        html: '',
+        entry: '',
+        src: path.resolve(__dirname, '..', '..', 'src'),
+    };
+    config.resolve.modules.push(paths.src);
+    config.resolve.extensions.push('.ts', 'tsx');
+    config.module.rules.push(buildCssLoaders(true));
+    // eslint-disable-next-line no-param-reassign
+    config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+            return {
+                ...rule,
+                exclude: /\.svg$/i,
+            };
+        }
+        return rule;
+    });
+
+    if (config.resolve) {
+        // eslint-disable-next-line no-param-reassign
+        config.resolve.plugins = [
+            ...(config.resolve.plugins || []),
+            new TsconfigPathsPlugin({
+                extensions: config.resolve.extensions,
+            }),
+        ];
+    }
+    config.module.rules.push(buildSvgLoaders());
+    return config;
+};

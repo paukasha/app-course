@@ -16,7 +16,7 @@ const AppRouter = () => (
                             path={path}
                             element={(
                                 <Suspense
-                                    fallback={PageLoader}
+                                    fallback={<PageLoader />}
                                 >
                                     {element}
                                 </Suspense>

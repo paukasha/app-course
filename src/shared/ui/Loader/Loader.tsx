@@ -1,12 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import './Loader.module.scss';
+import cls from './Loader.module.scss';
 
 interface LoaderProps {
     className?: string;
 }
 
 export const Loader = ({ className }: LoaderProps) => (
-    <div className={classNames('lds-default', {}, [className])}>
+    <div className={classNames(cls['lds-default'], {}, [className])}>
         <div />
         <div />
         <div />

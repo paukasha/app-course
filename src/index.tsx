@@ -10,7 +10,6 @@ render(
         <ErrorBoundary>
             <ThemeProvider>
                 <App />
-                ,
             </ThemeProvider>
         </ErrorBoundary>
 
