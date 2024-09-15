@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import React, { Suspense } from 'react';
 
 import { useTheme } from 'app/provider/ThemeProvider';

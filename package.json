@@ -14,6 +14,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1 npx loki test",
     "test:ui:ok": "AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1 npx loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -93,11 +94,13 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
     "@types/lodash": "^4.17.5",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
     "react-i18next": "^11.15.5",
+    "react-redux": "^7.2.6",
     "stylelint": "^14.5.3",
     "stylelint-config-standard-scss": "^3.0.0",
     "tsconfig-paths-webpack-plugin": "^4.1.0"

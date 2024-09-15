@@ -1,5 +1,6 @@
-./build
+/build
 .idea
 node_modules
 
 *storybook.log
+/storybook-static
