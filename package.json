@@ -17,7 +17,9 @@
     "test:ui:ok": "AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1 npx loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "prepare": "husky install",
+    "husky:ok": "git push --no-verify"
   },
   "keywords": [],
   "author": "",
@@ -72,6 +74,7 @@
     "file-loader": "^6.2.0",
     "globals": "^15.9.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "json-server": "^0.17.0",
