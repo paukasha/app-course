@@ -1,13 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/provider/ErrorBoundary';
 import { Counter } from 'entities/Counter';
 
 const MainPage = () => {
     const { t } = useTranslation('mainpage');
     return (
         <div>
-            <BugButton />
             {t('Главная')}
 
             <Counter />

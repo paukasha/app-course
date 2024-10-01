@@ -1,0 +1,77 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/provider/ThemeProvider';
+import { Text, TextTheme } from './Text';
+
+export default {
+    title: 'shared/Text',
+    component: Text,
+    argTypes: {},
+} as Meta<typeof Text>;
+
+type Story = StoryObj<typeof Text>;
+export const Primary: Story = {
+    args: {
+        title: 'Primary title text',
+        text: 'Primary text text',
+    },
+
+};
+export const onlyText: Story = {
+    args: {
+        text: 'Primary text text',
+    },
+};
+
+export const onlyTitle: Story = {
+    args: {
+        title: 'Primary title Text',
+    },
+};
+
+export const PrimaryDark: Story = {
+    args: {
+        title: 'Primary title text',
+        text: 'Primary text text',
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+
+};
+export const onlyTextDark: Story = {
+    args: {
+        text: 'Primary text text',
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const onlyTitleDark: Story = {
+    args: {
+        title: 'Primary title Text',
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const ErrorTitle: Story = {
+    args: {
+        title: 'Error title',
+        theme: TextTheme.ERROR,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const ErrorText: Story = {
+    args: {
+        title: 'error Text',
+        theme: TextTheme.ERROR,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const ErrorTitleText: Story = {
+    args: {
+        title: 'Error title Text',
+        text: 'Error text Text',
+        theme: TextTheme.ERROR,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};

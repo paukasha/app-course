@@ -3,5 +3,10 @@
   "Короткий язык": "En",
   "Страница не найдена": "Not Found Page",
   "Войти": "Signin",
-  "Введите username": "Input username"
+  "Введите username": "Input username",
+  "Введите пароль": "Input password",
+  "Главная": "Главная",
+  "О сайте": "About",
+  "Форма авторизации": "Authorization",
+  "Неверный логин или пароль": "Invalid username or password"
 }
