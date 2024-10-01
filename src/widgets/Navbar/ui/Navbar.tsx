@@ -62,7 +62,8 @@ export const Navbar = ({ className }: NavbarProps) => {
                 {/* <AppLink to="/about" theme={AppLinkTheme.PRIMARY}>О нас</AppLink> */}
             </Button>
 
-            <LoginModal isOpen={isAuthModal} onClose={onClose} />
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
+
         </div>
     );
 };
