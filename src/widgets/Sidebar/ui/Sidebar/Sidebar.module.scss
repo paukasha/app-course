@@ -44,23 +44,6 @@
     padding: 20px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    cursor: pointer;
-    opacity: 1;
-    transition: 0.3s opacity linear;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    fill: var(--inverted-secondary-color);
-}
 
 .collapsed {
     width: var(--sidebar-width-collapsed);

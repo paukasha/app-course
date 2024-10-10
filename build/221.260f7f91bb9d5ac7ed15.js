@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcool_frontend=self.webpackChunkcool_frontend||[]).push([[221],{221:(n,e,o)=>{o.r(e),o.d(e,{default:()=>c});var t=o(893),r=o(327);const c=function(){var n=(0,r.$)("about").t;return(0,t.jsx)("div",{children:n("О Сайте")},void 0)}}}]);
