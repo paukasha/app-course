@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/provider/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ProfilePage from './ProfilePage';
 
 export default {
@@ -10,13 +13,11 @@ export default {
 } as Meta<typeof ProfilePage>;
 
 type Story = StoryObj<typeof ProfilePage>;
-export const Primary: Story = {
+export const Normal: Story = {
     args: {},
-    // decorators: [StoreDecorator({
-    //     loginForm: {
-    //         username: 'admin',
-    //         password: '123',
-    //     },
-    // })],
-
+    decorators: [StoreDecorator({})],
+};
+export const Dark: Story = {
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
 };

@@ -21,6 +21,7 @@ export const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
         children,
         ...otherProps
     } = props;
+
     return (
         <Link
             to={to}

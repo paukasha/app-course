@@ -8,5 +8,9 @@
   "Главная": "Главная",
   "О сайте": "About",
   "Форма авторизации": "Authorization",
-  "Неверный логин или пароль": "Invalid username or password"
+  "Неверный логин или пароль": "Invalid username or password",
+  "Произошла ошибка": "Error",
+  "Попробуйте обновить страницу": "Try reload page",
+  "Отмена": "Cancel",
+  "Сохранить": "Save"
 }
