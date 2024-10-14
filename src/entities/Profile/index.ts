@@ -1,6 +1,6 @@
 import { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 
-export { Profile, ProfileScheme } from './model/types/profile';
+export { Profile, ProfileScheme, ValidateProfileErrors } from './model/types/profile';
 
 export {
     profileReducer,
@@ -42,3 +42,7 @@ export {
 export {
     getProfileForm,
 } from './model/selectors/getProfileForm/getProfileForm';
+
+export {
+    getProfileErrors,
+} from './model/selectors/getProfileErrors/getProfileErrors';

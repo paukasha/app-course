@@ -4,5 +4,10 @@
   "Город": "City",
   "Аватар": "Avatar",
   "Ваша фамилия": "Surname",
-  "Введите ссылку на аватар": "Input avatar link"
+  "Введите ссылку на аватар": "Input avatar link",
+  "Серверная ошибка": "Server error",
+  "Некорректная страна": "Incorrect country",
+  "Некорректный возраст": "Incorrect age",
+  "Имя и фамилия обязательны": "Name and surname is required",
+  "Данные не указаны": "No data"
 }
