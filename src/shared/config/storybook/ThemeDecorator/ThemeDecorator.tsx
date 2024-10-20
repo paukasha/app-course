@@ -8,5 +8,4 @@ export const ThemeDecorator = (theme: Theme): Decorator => (Story) => (
             <Story />
         </div>
     </ThemeProvider>
-
 );
