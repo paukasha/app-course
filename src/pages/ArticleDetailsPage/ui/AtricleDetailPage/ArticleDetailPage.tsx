@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
@@ -9,9 +9,16 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line max-len
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {
-    fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentByArticleId/fetchCommentByArticleId';
+// eslint-disable-next-line max-len
+import { AddCommentForm } from 'features/AddCommentForm';
+// eslint-disable-next-line max-len
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+// eslint-disable-next-line max-len
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+// eslint-disable-next-line max-len
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 // eslint-disable-next-line max-len
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import cls from './ArticleDetailPage.module.scss';
@@ -37,6 +44,14 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const commentsError = useSelector(getArticleCommentsError);
+    const navigate = useNavigate();
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
+
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -57,10 +72,13 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
             <div
                 className={classNames(cls.ArticleDetailPage, {}, [className])}
             >
+                <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
+                    {t('Вернуться к списку')}
+                </Button>
                 <ArticleDetails id={id} />
 
                 <Text title={t('Комментарий')} className={cls.commentTitle} />
-
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}
