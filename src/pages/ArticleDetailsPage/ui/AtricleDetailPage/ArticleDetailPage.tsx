@@ -16,6 +16,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 // eslint-disable-next-line max-len
+import { Page } from 'shared/ui/Page/Page';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 // eslint-disable-next-line max-len
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
@@ -69,7 +70,7 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailPage, {}, [className])}
             >
                 <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
@@ -83,7 +84,7 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

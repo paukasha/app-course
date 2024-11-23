@@ -32,18 +32,21 @@ export const ArticleViewSelector = ({ className, view, onViewClick }: ArticleVie
     };
     return (
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-            {viewTypes.map((viewType) => (
-                <Button
-                    theme={ThemeButton.CLEAR}
-                    onClick={onClick(viewType.view)}
+            {
+                viewTypes.map((viewType) => (
+                    <Button
+                        key={viewType.view}
+                        theme={ThemeButton.CLEAR}
+                        onClick={onClick(viewType.view)}
 
-                >
-                    <Icon
-                        Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
-                    />
-                </Button>
-            ))}
+                    >
+                        <Icon
+                            Svg={viewType.icon}
+                            className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+                        />
+                    </Button>
+                ))
+            }
         </div>
     );
 };
