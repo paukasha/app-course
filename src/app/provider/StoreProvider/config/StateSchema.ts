@@ -10,15 +10,19 @@ import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
+
+    // асинхронные редюсеры
     loginForm?: LoginSchema,
     profile?: ProfileScheme
     articleDetail?: ArticleDetailSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema,
-    addCommentForm?: AddCommentFormSchema
+    addCommentForm?: AddCommentFormSchema,
+    articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
