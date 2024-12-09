@@ -13,8 +13,5 @@
 .SMALL {
   display: flex;
   flex-wrap: wrap;
-
-  .card {
-    margin-bottom: 30px;
-  }
+  gap: 30px;
 }
