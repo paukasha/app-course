@@ -12,9 +12,6 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 // eslint-disable-next-line max-len
 import { AddCommentForm } from 'features/AddCommentForm';
 // eslint-disable-next-line max-len
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 // eslint-disable-next-line max-len
 import { Page } from 'widgets/Page/Page';
 import {
@@ -22,6 +19,7 @@ import {
     getArticleRecommendationsIsLoading,
 } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
+import { ArticleDetailPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailPageHeader/ArticleDetailPageHeader';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -54,10 +52,6 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
     const recommendationsError = useSelector(getArticleRecommendationsError);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const commentsError = useSelector(getArticleCommentsError);
-    const navigate = useNavigate();
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -83,9 +77,7 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailPage, {}, [className])}
             >
-                <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
-                    {t('Вернуться к списку')}
-                </Button>
+                <ArticleDetailPageHeader />
                 <ArticleDetails id={id} />
 
                 <Text size={TextSize.L} title={t('Рекомендуем')} className={cls.commentTitle} />
