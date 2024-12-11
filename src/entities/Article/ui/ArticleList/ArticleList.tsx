@@ -1,11 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListitemSkeleton';
+// eslint-disable-next-line max-len
 import { HTMLAttributeAnchorTarget } from 'react';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
+import { Article, ArticleView } from 'entities/Article';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListitemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {

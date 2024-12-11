@@ -9,6 +9,7 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/lib/Stack';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -40,10 +41,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack justify="between" max className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
-                <div className={cls.btnWrapper}>
+                <div>
                     {readonly ? (
                         <Button
                             theme={ThemeButton.OUTLINE}
@@ -54,7 +55,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                         </Button>
                     )
                         : (
-                            <div className={cls.btns}>
+                            <HStack gap="8">
                                 <Button
                                     theme={ThemeButton.OUTLINE_RED}
                                     className={cls.editBtn}
@@ -69,11 +70,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                 >
                                     {t('Сохранить')}
                                 </Button>
-                            </div>
+                            </HStack>
                         )}
                 </div>
             )}
 
-        </div>
+        </HStack>
     );
 };
