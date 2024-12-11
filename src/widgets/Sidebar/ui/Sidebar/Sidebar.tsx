@@ -25,11 +25,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     const { t } = useTranslation();
 
     return (
-        <menu
+        <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <VStack gap="16" className={cls.items}>
+            <VStack role="navigation" gap="16" className={cls.items}>
                 {SidebarItemsList.map((item) => (
                     <SidebarItem
                         item={item}
@@ -57,6 +57,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                     className={cls.lang}
                 />
             </div>
-        </menu>
+        </aside>
     );
 });
