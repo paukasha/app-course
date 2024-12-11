@@ -3,6 +3,7 @@
   "Короткий язык": "En",
   "Страница не найдена": "Not Found Page",
   "Войти": "Signin",
+  "Выйти": "Logout",
   "Введите username": "Input username",
   "Введите пароль": "Input password",
   "Главная": "Главная",
@@ -23,5 +24,9 @@
   "Айти": "IT",
   "Все": "All",
   "Экономика": "Economics",
-  "Наука": "Science"
+  "Наука": "Science",
+  "Pavlenko Code": "Pavlenko Code",
+  "Создать статью": "Create article",
+  "Профиль": "Profile",
+  "Статьи": "Articles"
 }
