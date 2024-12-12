@@ -3,6 +3,7 @@ import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/lib/Stack';
+import { DropDownDirection } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -11,8 +12,6 @@ export interface ListBoxItem {
     disabled?: boolean
 }
 
-type dropDownDirection = 'top' | 'bottom'
-
 interface ListBoxProps {
     items?: ListBoxItem[];
     className?: string;
@@ -20,13 +19,15 @@ interface ListBoxProps {
     defaultValue?: string;
     onChange: (value: string) => void;
     readonly?: boolean
-    direction?: dropDownDirection
+    direction?: DropDownDirection
     label?: string
 }
 
-const mapDirectionClass: Record<dropDownDirection, string> = {
-    bottom: cls.bottom,
-    top: cls.optionsTop,
+const mapDirectionClass: Record<DropDownDirection, string> = {
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top right': cls.optionsTopRight,
+    'top left': cls.optionsTopLeft,
 };
 
 export function ListBox(props: ListBoxProps) {
@@ -37,7 +38,7 @@ export function ListBox(props: ListBoxProps) {
         value,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottom left',
         label,
     } = props;
 
@@ -74,7 +75,14 @@ export function ListBox(props: ListBoxProps) {
                         >
                             {({ active, selected }) => (
                                 <li
-                                    className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled }, [])}
+                                    className={classNames(
+                                        cls.item,
+                                        {
+                                            [cls.active]: active,
+                                            [cls.disabled]: item.disabled,
+                                        },
+                                        [],
+                                    )}
                                 >
                                     {selected && '!!!'}
                                     {item.content}
