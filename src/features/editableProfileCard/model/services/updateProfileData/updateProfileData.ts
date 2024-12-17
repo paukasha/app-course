@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/provider/StoreProvider';
 // eslint-disable-next-line max-len
-import { validateProfileData } from '../../../model/services/validateProfileData/validateProfileData';
-import { Profile, ValidateProfileErrors } from '../../types/profile';
+import { ValidateProfileErrors } from '../../types/editableProfileCardSchema';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
+import { Profile } from '../../../../../entities/Profile/model/types/profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 
 // eslint-disable-next-line max-len
