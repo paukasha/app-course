@@ -4,9 +4,7 @@ import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
+
 // eslint-disable-next-line max-len
 import { Page } from 'widgets/Page/Page';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
