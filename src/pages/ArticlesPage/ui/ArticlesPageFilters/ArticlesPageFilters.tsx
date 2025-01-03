@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import {
     ArticleSortField,
     ArticleSortSelector,
+    ArticleType,
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
@@ -16,7 +17,6 @@ import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from 'entities/Article/model/types/article';
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,

@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {EditableProfileCardHeader} from './EditableProfileCardHeader';
 
 export default {
-    title: 'shared/EditableProfileCardHeader',
+    title: 'features/EditableProfileCard/EditableProfileCardHeader',
     component: EditableProfileCardHeader,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -12,4 +13,5 @@ export default {
 type Story = StoryObj<typeof EditableProfileCardHeader>;
 export const Primary: Story = {
     args: {},
+    decorators: [StoreDecorator({})],
 };

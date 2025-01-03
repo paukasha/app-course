@@ -1,6 +1,6 @@
-import { AddCommentFormSchema } from 'features/AddCommentForm/model/types/addCommentForm';
+import {AddCommentFormSchema} from 'features/AddCommentForm/model/types/addCommentForm';
 
-export {
+export type {
     AddCommentFormSchema,
 };
 

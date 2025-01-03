@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleDetails } from './ArticleDetails';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {ArticleBlockType, ArticleType} from 'entities/Article';
+import {ArticleDetails} from './ArticleDetails';
+import {Article} from '../../model/types/article';
 
 export default {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },

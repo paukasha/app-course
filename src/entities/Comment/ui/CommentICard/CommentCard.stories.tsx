@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { CommentCard } from './CommentCard';
+import type {Meta, StoryObj} from '@storybook/react';
+import {CommentCard} from './CommentCard';
 
 export default {
-    title: 'shared/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     argTypes: {
         backgroundColor: { control: 'color' },

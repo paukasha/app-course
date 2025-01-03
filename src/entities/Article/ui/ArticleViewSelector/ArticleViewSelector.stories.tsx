@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleViewSelector } from './ArticleViewSelector';
+import type {Meta, StoryObj} from '@storybook/react';
+import {ArticleViewSelector} from './ArticleViewSelector';
 
 export default {
-    title: 'shared/ArticleViewSelector',
+    title: 'entities/Article/ArticleViewSelector',
     component: ArticleViewSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

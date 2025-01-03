@@ -1,12 +1,12 @@
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
-import { ArticleDetailRecommendationsSchema } from './model/types/articleDetailRecommendationsSchema';
-import { ArticleDetailsCommentsSchema } from './model/types/articleDetailsCommentSchema';
+import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/model/types';
+import {ArticleDetailRecommendationsSchema} from './model/types/articleDetailRecommendationsSchema';
+import {ArticleDetailsCommentsSchema} from './model/types/articleDetailsCommentSchema';
 
 export {
     ArticleDetailPageAsync as ArticleDetailPage,
 } from './ui/AtricleDetailPage/ArticleDetailPage.async';
 
-export {
+export type {
     ArticleDetailsCommentsSchema,
     ArticleDetailRecommendationsSchema,
     ArticleDetailsPageSchema,

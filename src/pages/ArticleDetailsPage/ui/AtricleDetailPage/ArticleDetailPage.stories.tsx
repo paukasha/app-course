@@ -1,11 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import type {Meta, StoryObj} from '@storybook/react';
+import {Article, ArticleBlockType, ArticleType} from 'entities/Article';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailPage from './ArticleDetailPage';
 
 export default {
-    title: 'pages/ArticleDetailPage',
+    title: 'pages/ArticleDetailsPage/ArticleDetailPage',
     component: ArticleDetailPage,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -15,7 +14,7 @@ export default {
 type Story = StoryObj<typeof ArticleDetailPage>;
 
 const article: Article = {
-    id: '1',
+    id: '1456789',
     title: 'Статья',
     subtitle: 'Описание статьи',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
@@ -90,9 +89,7 @@ const article: Article = {
 export const Primary: Story = {
     args: {},
     decorators: [StoreDecorator({
-        //     TODO непонятно
-        // @ts-ignore
-        articleDetails: {
+        articleDetail: {
             data: article,
         },
     })],

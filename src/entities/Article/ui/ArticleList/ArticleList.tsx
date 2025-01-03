@@ -1,12 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {useTranslation} from 'react-i18next';
 // eslint-disable-next-line max-len
-import { HTMLAttributeAnchorTarget } from 'react';
-import { List, ListRowProps, WindowScroller } from 'react-virtualized';
-import { PAGE_ID } from 'widgets/Page/Page';
-import { Article, ArticleView } from 'entities/Article';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListitemSkeleton';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import {HTMLAttributeAnchorTarget} from 'react';
+import {List, ListRowProps, WindowScroller} from 'react-virtualized';
+import {PAGE_ID} from 'widgets/Page/Page';
+import {ArticleView} from '../../model/consts/articleConsts';
+import {Article} from '../../model/types/article';
+import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListitemSkeleton';
+import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
@@ -76,7 +77,9 @@ export const ArticleList = (props: ArticleListProps) => {
         );
     }
 
+    // @ts-ignore
     return (
+        // @ts-ignore
         <WindowScroller
             onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById(PAGE_ID) as Element}
@@ -89,10 +92,12 @@ export const ArticleList = (props: ArticleListProps) => {
                     onChildScroll, isScrolling, scrollTop,
                 }) => (
                     <div
+                        // @ts-ignore
                         ref={registerChild}
                         className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                     >
                         {virtualized ? (
+                            // @ts-ignore
                             <List
                                 height={height ?? 700}
                                 rowCount={rowCount}

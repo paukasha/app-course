@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { CommentList } from './CommentList';
+import type {Meta, StoryObj} from '@storybook/react';
+import {CommentList} from './CommentList';
 
 export default {
-    title: 'shared/CommentList',
+    title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: {
         backgroundColor: { control: 'color' },

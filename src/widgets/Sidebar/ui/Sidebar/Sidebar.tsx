@@ -5,7 +5,7 @@ import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwither';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/lib/Stack';
+import { VStack } from 'shared/ui/Stack';
 import { getSideBarItems } from '../../model/selectors/getSidebaritems';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

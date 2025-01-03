@@ -8,8 +8,9 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack } from 'shared/ui/Stack';
+import { NotificationsButton } from 'features/notificationsButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -40,6 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
+                {/* eslint-disable-next-line max-len */}
                 <Text className={cls.appName} title={t('Pavlenko Code')} theme={TextTheme.INVERTED} />
                 <AppLink
                     className={cls.createBtn}
@@ -49,24 +51,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
 
-                <Dropdown
-                    className={cls.dropdown}
-                    items={
-                        [
-                            {
-                                content: t('Профиль'),
-                                href: RoutePath.profile + authData.id,
-                            },
-                            {
-                                content: t('Выйти'),
-                                onClick: onLogout,
-                            },
-                        ]
-                    }
-                    direction="bottom left"
-                    trigger={<Avatar size={30} src={authData.avatar} />}
-                />
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationsButton />
 
+                    <AvatarDropdown />
+                </HStack>
                 <LoginModal isOpen={isAuthModal} onClose={onClose} />
             </header>
         );

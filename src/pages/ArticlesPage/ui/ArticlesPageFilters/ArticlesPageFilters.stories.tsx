@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ArticlesPageFilters } from './ArticlesPageFilters';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {ArticlesPageFilters} from './ArticlesPageFilters';
 
 export default {
-    title: 'shared/ArticlesPageFiters',
+    title: 'pages/ArticlesPage/ArticlesPageFilters',
     component: ArticlesPageFilters,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -12,4 +13,5 @@ export default {
 type Story = StoryObj<typeof ArticlesPageFilters>;
 export const Primary: Story = {
     args: {},
+    decorators: [StoreDecorator({})],
 };

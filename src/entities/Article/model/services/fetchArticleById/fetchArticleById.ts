@@ -1,6 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/provider/StoreProvider';
-import { Article } from '../../types/article';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import {ThunkConfig} from 'app/provider/StoreProvider';
+import {Article} from '../../types/article';
 
 interface LoginByUsernameProps {
     username: string;
@@ -14,13 +14,16 @@ enum LoginErrors {
 
 export const fetchArticleById = createAsyncThunk<
     Article,
-    string,
+    string | undefined,
     ThunkConfig<string>
 >(
     'articleDetail/fetchArticleById',
     async (articleId, thunkAPI) => {
         const { rejectWithValue, extra } = thunkAPI;
         try {
+            if (!articleId) {
+                throw new Error('ошибка');
+            }
             const response = await extra.api.get<Article>(`/articles/${articleId}`, {
                 params: {
                     _expand: 'user',

@@ -10,10 +10,10 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { ProfileCard } from 'entities/Profile';
-import { VStack } from 'shared/lib/Stack';
+import { VStack } from 'shared/ui/Stack';
+import { ValidateProfileErrors } from 'features/editableProfileCard/model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ValidateProfileErrors } from '../../model/types/editableProfileCardSchema';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';

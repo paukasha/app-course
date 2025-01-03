@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type {StorybookConfig} from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
     stories: [
@@ -11,6 +11,7 @@ const config: StorybookConfig = {
         '@chromatic-com/storybook',
         '@storybook/addon-interactions',
         'storybook-addon-remix-react-router',
+        'storybook-addon-mock',
     ],
     framework: {
         name: '@storybook/react-webpack5',

@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleSortSelector } from './ArticleSortSelector';
+import type {Meta, StoryObj} from '@storybook/react';
+import {ArticleSortSelector} from './ArticleSortSelector';
 
 export default {
-    title: 'shared/ArticleSortSelector',
+    title: 'entities/Article/ArticleSortSelector',
     component: ArticleSortSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

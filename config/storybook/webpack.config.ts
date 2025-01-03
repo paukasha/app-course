@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import path from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import { BuildPaths } from '../build/types/config';
-import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
-import { buildSvgLoaders } from '../build/loaders/buildSvgLoaders';
+import {BuildPaths} from '../build/types/config';
+import {buildCssLoaders} from '../build/loaders/buildCssLoaders';
+import {buildSvgLoaders} from '../build/loaders/buildSvgLoaders';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -43,7 +43,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config!.plugins!.push(
         new webpack.DefinePlugin({
             __IS_DEV__: true,
-            __API__: JSON.stringify(''),
+            __API__: JSON.stringify('http://testapi.ru'),
             __PROJECT__: JSON.stringify('storybook'),
         }),
     );

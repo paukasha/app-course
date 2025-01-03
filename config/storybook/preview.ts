@@ -1,8 +1,9 @@
-import type { Preview } from '@storybook/react';
+import type {Preview} from '@storybook/react';
 import 'app/styles/index.scss';
-import { withRouter } from 'storybook-addon-remix-react-router';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '../../src/app/provider/ThemeProvider';
+import {withRouter} from 'storybook-addon-remix-react-router';
+import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Theme} from '../../src/app/provider/ThemeProvider';
+import {SuspenseDecorator} from '../../src/shared/config/SuspenseDecorator/SuspenseDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -16,6 +17,7 @@ const preview: Preview = {
     decorators: [
         ThemeDecorator(Theme.LIGHT),
         withRouter(),
+        SuspenseDecorator,
         // TranslationDecorator(),
     ],
 };

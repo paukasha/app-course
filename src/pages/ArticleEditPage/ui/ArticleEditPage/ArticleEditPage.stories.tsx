@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
-    title: 'shared/ArticleEditPage',
+    title: 'pages/ArticleEditPage',
     component: ArticleEditPage,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -12,4 +13,5 @@ export default {
 type Story = StoryObj<typeof ArticleEditPage>;
 export const Primary: Story = {
     args: {},
+    decorators: [StoreDecorator({})],
 };

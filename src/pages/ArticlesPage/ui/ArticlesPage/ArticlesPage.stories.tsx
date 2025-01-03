@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'pages/ArticlesPage',
+    title: 'pages/ArticlesPage/ArticlesPage',
     component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -12,4 +13,5 @@ export default {
 type Story = StoryObj<typeof ArticlesPage>;
 export const Primary: Story = {
     args: {},
+    decorators: [StoreDecorator({})],
 };
