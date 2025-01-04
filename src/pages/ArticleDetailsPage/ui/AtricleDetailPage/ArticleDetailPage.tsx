@@ -1,20 +1,21 @@
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import {memo} from 'react';
-import {ArticleDetails} from '@/entities/Article';
-import {useParams} from 'react-router-dom';
-import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader';
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
+import { useParams } from 'react-router-dom';
+import { ArticleDetails } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 
 // eslint-disable-next-line max-len
-import {Page} from '@/widgets/Page/Page';
-import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/model/slices';
+import { Page } from '@/widgets/Page/Page';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
 // eslint-disable-next-line max-len
-import {ArticleDetailPageHeader} from '@/pages/ArticleDetailsPage/ui/ArticleDetailPageHeader/ArticleDetailPageHeader';
-import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
+import { ArticleDetailPageHeader } from '@/pages/ArticleDetailsPage/ui/ArticleDetailPageHeader/ArticleDetailPageHeader';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 // eslint-disable-next-line max-len
-import {ArticleDetailsComments} from '@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsComments } from '@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments';
 // eslint-disable-next-line max-len
 import cls from './ArticleDetailPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailPageProps {
     className?: string;
@@ -29,15 +30,9 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
 
     const { id } = useParams<{ id: string }>();
 
-    // if (!id) {
-    //     return (
-    //         <div
-    //             className={classNames(cls.ArticleDetailPage, {}, [className])}
-    //         >
-    //             {t('Статья не найдена')}
-    //         </div>
-    //     );
-    // }
+    if (!id) {
+        return null;
+    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -47,6 +42,7 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
                 <ArticleDetailPageHeader />
                 <ArticleDetails id={id} />
                 <ArticleRecommendationsList />
+                <ArticleRating articleId={id} />
                 <ArticleDetailsComments id={id} />
 
             </Page>
