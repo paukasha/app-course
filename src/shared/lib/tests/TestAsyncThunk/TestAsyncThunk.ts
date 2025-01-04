@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/provider/StoreProvider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
+import { StateSchema } from '@/app/provider/StoreProvider';
 
 // объяснение на примере
 // user это  Return

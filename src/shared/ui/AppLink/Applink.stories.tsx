@@ -1,5 +1,5 @@
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/provider/ThemeProvider';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Theme} from '@/app/provider/ThemeProvider';
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppLink, AppLinkTheme } from './AppLink';
 

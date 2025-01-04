@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { useCallback } from 'react';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import {Button, ThemeButton} from '@/shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getArticleDetailData } from 'entities/Article';
+import {getArticleDetailData} from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
 import cls from './ArticleDetailPageHeader.module.scss';
 

@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { getArticles } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+import {getArticles} from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlePageSelectors';
-import { ArticleList } from 'entities/Article';
-import { Text } from 'shared/ui/Text/Text';
+} from '@/pages/ArticlesPage/model/selectors/articlePageSelectors';
+import {ArticleList} from '@/entities/Article';
+import {Text} from '@/shared/ui/Text/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;

@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleView} from 'entities/Article';
+import {ArticleView} from '@/entities/Article';
 import {ArticleList} from './ArticleList';
 import {Article} from '../../model/types/article';
 

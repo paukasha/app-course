@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/Input';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import {Input} from '@/shared/ui/Input/Input';
+import {Button, ThemeButton} from '@/shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 // eslint-disable-next-line max-len
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader';
 // eslint-disable-next-line max-len
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 // eslint-disable-next-line max-len

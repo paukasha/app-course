@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/provider/ThemeProvider';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Theme} from '@/app/provider/ThemeProvider';
 import { CurrencySelect } from './CurrencySelect';
 
 export default {

@@ -1,7 +1,7 @@
-import {Country} from 'entities/Country';
-import {Currency} from 'entities/Currency';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 
-import {ValidateProfileErrors} from 'features/editableProfileCard/model/consts/consts';
+import {ValidateProfileErrors} from '@/features/editableProfileCard/model/consts/consts';
 import {validateProfileData} from './validateProfileData';
 
 const data = {

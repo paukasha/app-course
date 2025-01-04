@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getUserAuthData } from 'entities/User';
-import { ThunkConfig } from 'app/provider/StoreProvider/config/StateSchema';
-import { Comment } from 'entities/Comment';
+import {getUserAuthData} from '@/entities/User';
+import {ThunkConfig} from '@/app/provider/StoreProvider/config/StateSchema';
+import {Comment} from '@/entities/Comment';
 // eslint-disable-next-line max-len
-import { getArticleDetailData } from 'entities/Article/model/selectors/getArticleDetail/getArticleDetail';
+import {getArticleDetailData} from '@/entities/Article/model/selectors/getArticleDetail/getArticleDetail';
 // eslint-disable-next-line max-len
 import { fetchCommentsByArticleId } from '../../services/fetchCommentByArticleId/fetchCommentByArticleId';
 

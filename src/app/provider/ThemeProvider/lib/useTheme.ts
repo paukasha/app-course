@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-len
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from 'app/provider/ThemeProvider/lib/ThemeContext';
+import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from '@/app/provider/ThemeProvider/lib/ThemeContext';
 import { useContext } from 'react';
 
 interface UseThemeResult {

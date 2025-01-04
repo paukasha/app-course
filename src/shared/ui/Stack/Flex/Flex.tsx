@@ -1,4 +1,4 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cls from './Flex.module.scss';

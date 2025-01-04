@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import {Article} from '@/entities/Article';
 import withMock from 'storybook-addon-mock';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
