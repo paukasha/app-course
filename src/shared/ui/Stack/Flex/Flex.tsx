@@ -1,6 +1,6 @@
-import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between'
@@ -23,7 +23,7 @@ export interface FlexProps extends DivProps {
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
     center: cls.justifyCenter,
-    end: cls.alignEnd,
+    end: cls.justifyEnd,
     between: cls.justifyBetween,
 };
 

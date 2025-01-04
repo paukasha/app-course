@@ -1,31 +1,41 @@
 import React, { ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-
-import { Portal } from '@/shared/Portal/Portal';
-import { Overlay } from '@/shared/ui/Overlay/Overlay';
+import { useTheme } from '@/app/provider/ThemeProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string | undefined;
-    children?: ReactNode,
-    isOpen?: boolean,
-    onClose?: () => void,
-    lazy?: boolean
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const {
-        className, children, isOpen, onClose, lazy,
+        className,
+        children,
+        isOpen,
+        onClose,
+        lazy,
     } = props;
 
-    const { isClosing, close, isMounted } = useModal({
+    const {
+        close,
+        isClosing,
+        isMounted,
+    } = useModal({
         animationDelay: ANIMATION_DELAY,
         onClose,
         isOpen,
     });
+
+    const { theme } = useTheme();
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -38,15 +48,14 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <Overlay onClick={close} />
-                <div className={cls.overlay} onClick={close}>
-                    <div className={cls.content}>
-                        {children}
-                    </div>
+                <div
+                    className={cls.content}
+                >
+                    {children}
                 </div>
             </div>
-
         </Portal>
     );
 };
