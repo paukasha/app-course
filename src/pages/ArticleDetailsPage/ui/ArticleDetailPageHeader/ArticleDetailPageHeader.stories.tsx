@@ -1,6 +1,6 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import {ArticleDetailPageHeader} from './ArticleDetailPageHeader';
+import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ArticleDetailPageHeader } from './ArticleDetailPageHeader';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailPageHeader',

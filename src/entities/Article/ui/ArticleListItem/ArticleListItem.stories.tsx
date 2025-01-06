@@ -1,7 +1,7 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleView} from '@/entities/Article';
-import {Article} from '../../model/types/article';
-import {ArticleListItem} from './ArticleListItem';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleView } from '@/entities/Article';
+import { Article } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
 export default {
     title: 'entities/Article/ArticleListItem',

@@ -1,6 +1,6 @@
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/provider/StoreProvider';
-import { loginReducer } from '@/features/AuthByUsername';
+import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { articleDetailReducer } from '@/entities/Article/testing';

@@ -1,6 +1,6 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from '@/app/provider/StoreProvider';
-import {Article} from '../../types/article';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from '@/app/provider/StoreProvider';
+import { Article } from '../../types/article';
 
 interface LoginByUsernameProps {
     username: string;

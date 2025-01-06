@@ -57,7 +57,7 @@ module.exports = {
                 ],
             },
         ],
-        'max-len': ['error', {ignoreComments: true, code: 140}],
+        'max-len': ['error', { ignoreComments: true, code: 140 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -65,12 +65,19 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'pavlenko-plugin-eslint-checker/path-checker': ['error', {alias: '@'}],
+        'pavlenko-plugin-eslint-checker/path-checker': ['error', { alias: '@' }],
         'pavlenko-plugin-eslint-checker/public-api-imports': [
             'error',
             {
                 alias: '@',
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
+        'pavlenko-plugin-eslint-checker/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             },
         ],
     },
