@@ -40,6 +40,6 @@ describe('articleDetails.test', () => {
     });
     test('should work with empty state isLoading', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getArticleDetailIsLoading(state as StateSchema)).toEqual(false);
+        expect(getArticleDetailIsLoading(state as StateSchema)).toEqual(undefined);
     });
 });

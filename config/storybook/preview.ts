@@ -3,6 +3,7 @@ import 'app/styles/index.scss';
 import { withRouter } from 'storybook-addon-remix-react-router';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/SuspenseDecorator/SuspenseDecorator';
+import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
     parameters: {
@@ -12,7 +13,9 @@ const preview: Preview = {
                 date: /Date$/i,
             },
         },
+
     },
+
     decorators: [
         ThemeDecorator(Theme.LIGHT),
         withRouter(),

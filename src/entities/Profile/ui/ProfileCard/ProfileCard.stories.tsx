@@ -4,6 +4,7 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatar from '@/shared/assets/tests/cat.jpg';
 import { ProfileCard } from './ProfileCard';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/ProfileCard',
