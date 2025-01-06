@@ -19,6 +19,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'pavlenko-plugin-eslint-checker',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],

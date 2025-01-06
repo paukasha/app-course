@@ -5,13 +5,16 @@ import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
-import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { Page } from '@/widgets/Page';
 // eslint-disable-next-line max-len
-import { fetchNextArticlesPage } from '@/pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { ArticleInfiniteList } from '@/pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList';
-import { getArticlesPageHasMore, getArticlesPageNum } from '@/pages/ArticlesPage/model/selectors/articlePageSelectors';
-import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
+import {
+    ArticleInfiniteList,
+    ArticlesPageFilters,
+    fetchNextArticlesPage,
+    getArticlesPageHasMore,
+    getArticlesPageNum,
+    initArticlesPage,
+} from '@/pages/ArticlesPage';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';

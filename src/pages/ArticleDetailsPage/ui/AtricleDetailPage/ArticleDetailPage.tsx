@@ -6,13 +6,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 
 // eslint-disable-next-line max-len
-import { Page } from '@/widgets/Page/Page';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
+import { Page } from '@/widgets/Page';
 // eslint-disable-next-line max-len
-import { ArticleDetailPageHeader } from '@/pages/ArticleDetailsPage/ui/ArticleDetailPageHeader/ArticleDetailPageHeader';
+// eslint-disable-next-line max-len
+import { ArticleDetailPageHeader, ArticleDetailsComments, articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-// eslint-disable-next-line max-len
-import { ArticleDetailsComments } from '@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments';
 // eslint-disable-next-line max-len
 import cls from './ArticleDetailPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
