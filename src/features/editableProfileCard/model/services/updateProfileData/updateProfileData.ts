@@ -1,10 +1,10 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from '@/app/provider/StoreProvider';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from '@/app/provider/StoreProvider';
 // eslint-disable-next-line max-len
-import {ValidateProfileErrors} from '@/features/editableProfileCard/model/consts/consts';
-import {validateProfileData} from '../validateProfileData/validateProfileData';
-import {Profile} from '../../../../../entities/Profile/model/types/profile';
-import {getProfileForm} from '../../selectors/getProfileForm/getProfileForm';
+import { ValidateProfileErrors } from '../../consts/consts';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
+import { Profile } from '../../../../../entities/Profile/model/types/profile';
+import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 
 // eslint-disable-next-line max-len
 export const updateProfileData = createAsyncThunk<

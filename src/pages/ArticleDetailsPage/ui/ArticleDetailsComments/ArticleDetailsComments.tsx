@@ -1,25 +1,25 @@
-import {classNames} from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import {Text, TextSize} from '@/shared/ui/Text/Text';
-import cls from '@/pages/ArticleDetailsPage/ui/AtricleDetailPage/ArticleDetailPage.module.scss';
-import {AddCommentForm} from '@/features/AddCommentForm';
-import {CommentList} from '@/entities/Comment';
 import { useDispatch, useSelector } from 'react-redux';
+import { Suspense, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import cls from '@/pages/ArticleDetailsPage/ui/AtricleDetailPage/ArticleDetailPage.module.scss';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { CommentList } from '@/entities/Comment';
 import {
     getArticleComments,
 } from '@/pages/ArticleDetailsPage/model/slices/entityDetailsCommentSlice/entityDetailsCommentsSlice';
-import {getArticleCommentsIsLoading} from '@/pages/ArticleDetailsPage/model/selectors/comments';
-import { Suspense, useCallback } from 'react';
+import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comments';
 // eslint-disable-next-line max-len
 import {
-    addCommentForArticle
+    addCommentForArticle,
 } from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
     fetchCommentsByArticleId,
 } from '@/pages/ArticleDetailsPage/model/services/fetchCommentByArticleId/fetchCommentByArticleId';
-import {VStack} from '@/shared/ui/Stack';
-import {Loader} from '@/shared/ui/Loader/Loader';
+import { VStack } from '@/shared/ui/Stack';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 interface ArticleDetailsCommentsProps {
     className?: string;

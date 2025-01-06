@@ -17,13 +17,13 @@ export const Primary: Story = {
     },
 
 };
-export const onlyText: Story = {
+export const OnlyText: Story = {
     args: {
         text: 'Primary text text',
     },
 };
 
-export const onlyTitle: Story = {
+export const OnlyTitle: Story = {
     args: {
         title: 'Primary title Text',
     },
@@ -37,14 +37,14 @@ export const PrimaryDark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
 
 };
-export const onlyTextDark: Story = {
+export const OnlyTextDark: Story = {
     args: {
         text: 'Primary text text',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const onlyTitleDark: Story = {
+export const OnlyTitleDark: Story = {
     args: {
         title: 'Primary title Text',
     },

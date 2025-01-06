@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import path from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import {BuildPaths} from '../build/types/config';
-import {buildCssLoaders} from '../build/loaders/buildCssLoaders';
-import {buildSvgLoaders} from '../build/loaders/buildSvgLoaders';
+import { BuildPaths } from '../build/types/config';
+import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
+import { buildSvgLoaders } from '../build/loaders/buildSvgLoaders';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -16,6 +16,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     };
     config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('.ts', 'tsx');
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    };
     config!.module!.rules!.push(buildCssLoaders(true));
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore
