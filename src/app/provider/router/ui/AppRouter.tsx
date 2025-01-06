@@ -1,8 +1,9 @@
-import React, {memo, Suspense, useCallback} from 'react';
-import {Route, Routes} from 'react-router-dom';
-import {AppRouteProps, routeConfig} from '@/shared/config/routeConfig/routeConfig';
-import {PageLoader} from '@/widgets/PageLoader/ui/PageLoader';
-import {RequireAuth} from '@/app/provider/router/ui/RequireAuth';
+import React, { memo, Suspense, useCallback } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { PageLoader } from '@/widgets/PageLoader/ui/PageLoader';
+import { RequireAuth } from '@/app/provider/router/ui/RequireAuth';
+import { routeConfig } from '@/app/provider/router/config/routeConfig';
+import { AppRouteProps } from '@/shared/types/router';
 
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
