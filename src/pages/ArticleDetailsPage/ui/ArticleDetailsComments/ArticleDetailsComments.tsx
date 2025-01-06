@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Suspense, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import cls from '@/pages/ArticleDetailsPage/ui/AtricleDetailPage/ArticleDetailPage.module.scss';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
@@ -19,7 +19,7 @@ import {
     fetchCommentsByArticleId,
 } from '@/pages/ArticleDetailsPage/model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 import { VStack } from '@/shared/ui/Stack';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
