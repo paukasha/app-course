@@ -4,14 +4,22 @@ const config: StorybookConfig = {
     stories: [
         '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
+        {
+            name: '@storybook/addon-essentials',
+            options: {
+                backgrounds: false,
+            },
+        },
+        '@storybook/addon-essentials',
         '@storybook/addon-webpack5-compiler-swc',
         '@storybook/addon-onboarding',
         '@storybook/addon-links',
-        '@storybook/addon-essentials',
         '@chromatic-com/storybook',
         '@storybook/addon-interactions',
         'storybook-addon-remix-react-router',
         'storybook-addon-mock',
+        // 'storybook-addon-themes',
+        '@storybook/addon-themes',
     ],
     framework: {
         name: '@storybook/react-webpack5',
