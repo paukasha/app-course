@@ -4,16 +4,13 @@ import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
-
-// eslint-disable-next-line max-len
 import { Page } from '@/widgets/Page';
-// eslint-disable-next-line max-len
-// eslint-disable-next-line max-len
-import { ArticleDetailPageHeader, ArticleDetailsComments, articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-// eslint-disable-next-line max-len
 import cls from './ArticleDetailPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
+import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
+import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 
 interface ArticleDetailPageProps {
     className?: string;
