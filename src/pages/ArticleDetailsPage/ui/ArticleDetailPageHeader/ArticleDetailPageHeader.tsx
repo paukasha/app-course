@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleDetailData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
 import cls from './ArticleDetailPageHeader.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailPageHeaderProps {
     className?: string;
@@ -21,11 +21,13 @@ export const ArticleDetailPageHeader = ({ className }: ArticleDetailPageHeaderPr
     const canEdit = useSelector(getCanEditArticle);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.article_detail}${article?.id}/edit`);
+        if (article?.id) {
+            navigate(getRouteArticleEdit(article?.id));
+        }
     }, [article?.id, navigate]);
 
     return (

@@ -7,14 +7,11 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 // eslint-disable-next-line max-len
-import {
-    ArticleInfiniteList,
-    ArticlesPageFilters,
-    fetchNextArticlesPage,
-    getArticlesPageHasMore,
-    getArticlesPageNum,
-    initArticlesPage,
-} from '@/pages/ArticlesPage';
+import { getArticlesPageHasMore, getArticlesPageNum } from '../../model/selectors/articlePageSelectors';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
