@@ -1,6 +1,5 @@
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-// eslint-disable-next-line max-len
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/provider/StoreProvider';
 
