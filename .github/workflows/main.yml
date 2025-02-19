@@ -89,7 +89,10 @@ jobs:
         with:
           name: my-artifact-${{ matrix.runs-on }}
           path: '.loki'
-
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: always()
+        uses: actions/deploy-pages@v4
   download:
     needs: build-and-ui-testing
     runs-on: ubuntu-latest
@@ -101,17 +104,6 @@ jobs:
           path: my-artifact
           pattern: my-artifact-*
           merge-multiple: true
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: [ build-and-ui-testing, download ]
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        if: always()
-        uses: actions/deploy-pages@v4
 
   checks:
     runs-on: ubuntu-latest
