@@ -80,19 +80,16 @@ jobs:
       - name: Generate HTML report
         run: npm run test:ui:report
         if: always()
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-        if: always()
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: my-artifact-${{ matrix.runs-on }}
           path: '.loki'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        if: always()
-        uses: actions/deploy-pages@v4
+
+
+
   download:
     needs: build-and-ui-testing
     runs-on: ubuntu-latest
@@ -104,6 +101,25 @@ jobs:
           path: my-artifact
           pattern: my-artifact-*
           merge-multiple: true
+
+  deploy:
+    runs-on: download
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: page
+          path: .
+      - uses: actions/configure-pages@v1
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@main
 
   checks:
     runs-on: ubuntu-latest
