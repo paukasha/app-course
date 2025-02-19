@@ -11,7 +11,6 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { ProfileCard } from '@/entities/Profile';
 import { VStack } from '@/shared/ui/Stack';
-import { ValidateProfileErrors } from '@/features/editableProfileCard/model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -20,7 +19,7 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileErrors } from '../../model/selectors/getProfileErrors/getProfileErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import cls from './EditableProfileCard.module.scss';
+import { ValidateProfileErrors } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -88,7 +87,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap="8" max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack gap="8" max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text

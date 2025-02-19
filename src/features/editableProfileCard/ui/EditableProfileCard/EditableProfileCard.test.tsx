@@ -45,6 +45,8 @@ describe('features/editableProfileCard', () => {
 
     test('При отмене значения должны обнуляться', async () => {
         componentRender(<EditableProfileCard id="1" />, options);
+        await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
+        expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument();
 
         // очистить инпут
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));

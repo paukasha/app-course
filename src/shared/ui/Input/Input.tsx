@@ -3,15 +3,17 @@ import React, {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
-interface InputProps extends HTMLInputProps {
+interface InputProps extends HTMLInputProps, TestProps {
     className?: string;
     value?: string | number;
     onChange?: (value: string) => void,
     autofocus?: boolean,
-    readonly?: boolean
+    readonly?: boolean,
+    testid?: string
 }
 
 export const Input = memo((props: InputProps) => {
@@ -22,6 +24,7 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         autofocus = false,
         readonly,
+        testid,
         ...otherProps
     } = props;
 
@@ -79,6 +82,7 @@ export const Input = memo((props: InputProps) => {
                     onBlur={onBlur}
                     onSelect={onSelect}
                     readOnly={readonly}
+                    data-testid={testid ?? ''}
                     {...otherProps}
                 />
                 {isCaretVisible && (

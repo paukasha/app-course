@@ -4,12 +4,6 @@ const config: StorybookConfig = {
     stories: [
         '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
-        {
-            name: '@storybook/addon-essentials',
-            options: {
-                backgrounds: false,
-            },
-        },
         '@storybook/addon-essentials',
         '@storybook/addon-webpack5-compiler-swc',
         '@storybook/addon-onboarding',
