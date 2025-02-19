@@ -88,11 +88,22 @@ jobs:
         if: always()
         with:
           name: my-artifact-${{ matrix.runs-on }}
-          path: '.loki'
+          path: '.loki/report.html'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
         uses: actions/deploy-pages@v1
+  download:
+    needs: build-and-ui-testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        run: ls -R my-artifact
+      - uses: actions/download-artifact@v4
+        with:
+          path: my-artifact
+          pattern: my-artifact-*
+          merge-multiple: true
 
   checks:
     runs-on: ubuntu-latest
