@@ -92,7 +92,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
   download:
     needs: build-and-ui-testing
     runs-on: ubuntu-latest
