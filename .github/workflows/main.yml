@@ -87,7 +87,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: 'report.html'
+          name: report.html
           path: '.loki'
       - name: Deploy to GitHub Pages
         id: deployment
