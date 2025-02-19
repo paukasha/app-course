@@ -87,7 +87,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: report.html
+          name: my-artifact-${{ matrix.runs-on }}
           path: '.loki'
       - name: Deploy to GitHub Pages
         id: deployment
